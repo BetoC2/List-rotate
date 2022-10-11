@@ -4,8 +4,6 @@
 
 #include "List.h"
 
-#include <stdio.h>
-#include <stdlib.h>
 
 typedef struct node {
     int value;
@@ -43,3 +41,43 @@ void list_append(List *l, int value) {
     curr -> next = node_new(value);
 }
 
+void list_print(List *l) {
+    Node *curr = l -> head;
+
+    while(curr) {
+        printf("[%d]->", curr -> value);
+        curr = curr -> next;
+    }
+
+    printf("NULL\n");
+}
+
+void list_rotate(List *l, int rotation_factor) {
+    if (!(l->head) || !(l-> head -> next) )
+        return;
+
+    Node *first = l -> head;
+    Node *curr = first;
+
+    if (rotation_factor) {
+        while (curr -> next -> next) {
+            curr = curr -> next;
+        }
+
+        l -> head = curr -> next;
+        l -> head -> next = first;
+        curr -> next = NULL;
+        list_rotate(l, rotation_factor - 1);
+    }
+}
+
+void list_write(List* list) {
+    FILE* file = fopen("result.txt", "w");
+    Node* curr = list -> head;
+
+    while(curr) {
+        fprintf(file,"%d\n",curr->value);
+        curr = curr -> next;
+    }
+    fclose(file);
+}
