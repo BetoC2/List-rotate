@@ -12,7 +12,7 @@ int main(int argv, char *argc[]) {
     }
 
     if ( (!argc[1]) || (argc[1] && strcmp(argc[1],"rotate_list"))) {
-        printf("No se introdujo rotate_list");
+        printf("You should add rotate_list as the first argument");
         return 0;
     }
 
