@@ -3,10 +3,6 @@
 List *list_read(FILE*);
 void list_write(List*);
 
-//QUIEREN LIBERAR LA MEMORIA DE
-//CADA NODO Y LA LISTA AL TERMINAR? :v
-//Una función tipo list_kill?
-
 int main(int argv, char *argc[]) {
 
     FILE *file = fopen("input.txt", "r");
