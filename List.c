@@ -16,37 +16,37 @@ struct list {
 
 Node *node_new(int value) {
     Node *new_node = malloc(sizeof(Node));
-    new_node -> value = value;
-    new_node -> next = NULL;
+    new_node->value = value;
+    new_node->next = NULL;
     return new_node;
 }
 
 List* list_new(){
     List *l = malloc(sizeof(List));
-    l -> head = NULL;
+    l->head = NULL;
     return l;
 }
 
 void list_append(List *l, int value) {
 
-    if (!(l -> head)) {
-        l -> head = node_new(value);
+    if (!(l->head)) {
+        l->head = node_new(value);
         return;
     }
-    Node *curr = l -> head;
+    Node *curr = l->head;
 
-    while(curr -> next)
-        curr = curr -> next;
+    while(curr->next)
+        curr = curr->next;
 
-    curr -> next = node_new(value);
+    curr->next = node_new(value);
 }
 
 void list_print(List *l) {
-    Node *curr = l -> head;
+    Node *curr = l->head;
 
     while(curr) {
-        printf("[%d]->", curr -> value);
-        curr = curr -> next;
+        printf("[%d]->", curr->value);
+        curr = curr->next;
     }
 
     printf("NULL\n");
@@ -56,28 +56,38 @@ void list_rotate(List *l, int rotation_factor) {
     if (!(l->head) || !(l-> head -> next) )
         return;
 
-    Node *first = l -> head;
+    Node *first = l->head;
     Node *curr = first;
 
     if (rotation_factor) {
-        while (curr -> next -> next) {
-            curr = curr -> next;
+        while (curr->next->next) {
+            curr = curr->next;
         }
 
-        l -> head = curr -> next;
-        l -> head -> next = first;
-        curr -> next = NULL;
+        l->head = curr->next;
+        l->head->next = first;
+        curr->next = NULL;
         list_rotate(l, rotation_factor - 1);
     }
 }
 
-void list_write(List* list) {
+void list_write(List* l) {
     FILE* file = fopen("result.txt", "w");
-    Node* curr = list -> head;
+    Node* curr = l->head;
 
     while(curr) {
         fprintf(file,"%d\n",curr->value);
-        curr = curr -> next;
+        curr = curr->next;
     }
     fclose(file);
+}
+
+void list_kill(List *l){
+    Node* curr = l->head;
+    while (curr){
+        Node *to_delete = curr;
+        curr = curr->next;
+        free(to_delete);
+    }
+    free(l);
 }

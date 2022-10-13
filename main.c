@@ -30,6 +30,7 @@ int main(int argv, char *argc[]) {
 
     list_rotate(list, num);
     list_write(list);
+    list_kill(list);
 
     return 0;
 }

@@ -17,5 +17,6 @@ void list_append(List *l, int value);
 int list_contains(List *l, int value);
 void list_rotate(List *l, int rotation_factor);
 void list_write(List* l);
+void list_kill(List *l);
 
 #endif //LIST_ROTATION_LIST_H
