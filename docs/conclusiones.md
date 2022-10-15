@@ -28,6 +28,13 @@ Para concluir quiero hablar acerca de cómo integramos los temas que hemos visto
 
 ## Conclusiones de Miguel
 
+Para esta evaluación asincrónica pudimos implementar aquellos conocimientos vistos en clase, implementando algunas funciones de cara a la manipulación de listas, con algunas de las opciones que cualquier usuario puede hacer a la hora de utilizar un programa con listas, como ```list_new```, ```list_append```, ```list_print``` o ```list_kill```, las cuales practicamos en clase y nos resultó más fácil su manejo e implementación en este trabajo, practicando así de cara a un mejor dominio del tema y el mejoramiento de nuestra lógica.
+
+Así mismo, entendí mejor el uso de los tipos de datos abstractos en donde son de gran utilidad para entender que los programas tienen un funcionamiento detrás más complejo del que los usuarios pueden llegar a pensar, y el hecho de que los usuarios solo tengan acceso a esto hace que su interacción sea lo más simple posible, mientras que nosotros podemos aprender de como implementar de manera correcta algoritmos que queramos realizar a futuro. Además de tomar en cuenta los verbos semánticamente significativos, y poder entender en un futuro dentro de algunos lenguajes de programación de más alto nivel la lógica detrás de algunas funciones.
+
+Para la función ```list_rotate``` no hubo mucha complicación a la hora de implementarse ya que entendimos rápidamente la lógica para poder llegar al último elemento (donde antes apuntábamos al penúltimo elemento válido con tal de poder apuntar al último) y tal y como vimos en clase movimos este al ```head```, y el que estaba en el ```head``` lo recorrimos al siguiente, conectando de manera exitosa todos los nodos. Finalmente, una de las complicaciones que encontramos fue a la hora de leer el archivo de entrada y convertirlos a enteros, donde utilizamos ```fscanf``` dentro de un ciclo ```while``` y aprendimos (a las malas) que esta función suele devolver por defecto -1 cuando no lee nada, aprendiendo y corrigiendo este inconveniente que pudimos resolver.
+
+
 ## Conclusiones de Alberto
 
 En la elaboración de este proyecto, me di cuenta de la importancia de los tipos de datos abstractos, me parece que tienen una gran utilidad y me parece muy interesante poder entender el funcionamiento que hay detrás de estos tipos de datos, porque en lenguajes de más alto nivel como Python, sabes que funciona, pero no cómo y por qué. Además, considero que es necesario tener la noción de que las estructuras de datos complejas tienen una infinidad de funciones.
